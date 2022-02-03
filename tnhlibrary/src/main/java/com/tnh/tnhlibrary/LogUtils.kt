@@ -13,7 +13,11 @@ infix fun String.debug(message: String?){
 }
 
 fun Any?.logAny(tag: String = "Test"){
-    Log.i(tag, ">> ${this.toString()}")
+    ">> ${this.toString()}".logI(tag)
+}
+
+fun Any?.logVar(name: String, tag: String = "Test"){
+    "$name: ${this.toString()}".logI(tag)
 }
 
 fun String?.logI(tag: String = "Test"){
