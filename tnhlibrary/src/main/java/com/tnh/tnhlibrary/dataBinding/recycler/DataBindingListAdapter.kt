@@ -14,6 +14,15 @@ abstract class DataBindingListAdapter<MODEL, DATA_BINDING_CLASS: ViewDataBinding
         parent: ViewGroup,
         viewType: Int
     ): DataBindingViewHolder<DATA_BINDING_CLASS> {
-        return DataBindingViewHolder.from(parent, itemLayout)
+        val holder = DataBindingViewHolder.from<DATA_BINDING_CLASS>(parent, itemLayout)
+        initStateViewHolder(holder)
+        return holder
     }
+
+    /**
+     * Function is called before return from onCreateViewHolder method
+     *
+     * @param holder: The view holder created by onCreateViewHolder
+     */
+    open fun initStateViewHolder(holder: DataBindingViewHolder<DATA_BINDING_CLASS>){}
 }
