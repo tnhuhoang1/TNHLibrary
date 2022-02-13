@@ -17,6 +17,8 @@ open class PrefManager private constructor(
         changePref(appContext.getSharedPreferences(name, mode))
     }
 
+    fun getEditor() = editor
+
     fun getString(key: String, default: String = DEFAULT_STRING) = pref.getString(key, default) ?: default
 
     fun getInt(key: String, default: Int = DEFAULT_INT) = pref.getInt(key, default)
@@ -24,6 +26,8 @@ open class PrefManager private constructor(
     fun getLong(key: String, default: Long = DEFAULT_LONG) = pref.getLong(key, default)
 
     fun getFloat(key: String, default: Float = DEFAULT_FLOAT) = pref.getFloat(key, default)
+
+    fun getBoolean(key: String, default: Boolean = DEFAULT_BOOLEAN) = pref.getBoolean(key, default)
 
     fun putString(key: String, value: String){
         editTransaction {
@@ -49,6 +53,12 @@ open class PrefManager private constructor(
         }
     }
 
+    fun putBoolean(key: String, value: Boolean){
+        editTransaction {
+            putBoolean(key, value)
+        }
+    }
+
     private inline fun editTransaction(block: SharedPreferences.Editor.() -> SharedPreferences.Editor){
         block(editor).apply()
     }
@@ -68,5 +78,6 @@ open class PrefManager private constructor(
         const val DEFAULT_INT = 0
         const val DEFAULT_FLOAT = 0f
         const val DEFAULT_LONG = 0L
+        const val DEFAULT_BOOLEAN = false
     }
 }

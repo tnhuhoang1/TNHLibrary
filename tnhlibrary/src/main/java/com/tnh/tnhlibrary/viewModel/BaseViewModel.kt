@@ -10,6 +10,10 @@ open class BaseViewModel: ViewModel() {
     val message = _message.toLiveData()
 
     fun setMessage(message: String){
+        _message.value = EventLiveData(message)
+    }
+
+    fun postMessage(message: String){
         _message.postValue(EventLiveData(message))
     }
 
