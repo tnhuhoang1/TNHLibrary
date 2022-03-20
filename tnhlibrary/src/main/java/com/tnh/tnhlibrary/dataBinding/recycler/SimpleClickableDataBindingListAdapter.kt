@@ -3,9 +3,7 @@ package com.tnh.tnhlibrary.dataBinding.recycler
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 
-abstract class SimpleClickableDataBindingListAdapter<MODEL, DATA_BINDING_CLASS: ViewDataBinding>(
-    @LayoutRes itemLayout: Int
-): SimpleDataBindingListAdapter<MODEL, DATA_BINDING_CLASS>(itemLayout){
+abstract class SimpleClickableDataBindingListAdapter<MODEL, DATA_BINDING_CLASS: ViewDataBinding>(@LayoutRes itemLayout: Int): SimpleDataBindingListAdapter<MODEL, DATA_BINDING_CLASS>(itemLayout){
     private var rootClickListener: DataBindingItemClickListener<MODEL, DATA_BINDING_CLASS> = DataBindingItemClickListener { _, _, _ -> }
 
     override fun onBindViewHolder(holder: DataBindingViewHolder<DATA_BINDING_CLASS>, position: Int) {
