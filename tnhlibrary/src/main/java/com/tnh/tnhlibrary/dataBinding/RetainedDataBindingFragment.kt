@@ -9,10 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-open class RetainedDataBindingFragment<T: ViewDataBinding>(
-    @LayoutRes var layoutRes: Int,
+open class RetainedDataBindingFragment<T: ViewDataBinding>(@LayoutRes var layoutRes: Int): Fragment() {
     internal var isRetained: Boolean = true
-): Fragment() {
     lateinit var binding: T
 
     override fun onCreateView(
