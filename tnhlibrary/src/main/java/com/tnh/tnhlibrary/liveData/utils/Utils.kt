@@ -1,5 +1,6 @@
 package com.tnh.tnhlibrary.liveData.utils
 
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
@@ -36,4 +37,20 @@ fun <T> Fragment.eventObserve(
     observer: (T) -> Unit
 ){
     data.observe(owner, EventObserver(observer))
+}
+
+fun <T> AppCompatActivity.safeObserve(
+    data: LiveData<T>,
+    observer: (T) -> Unit
+){
+    data.observe(this){
+        it?.let(observer)
+    }
+}
+
+fun <T> AppCompatActivity.eventObserve(
+    data: LiveData<EventLiveData<T>>,
+    observer: (T) -> Unit
+){
+    data.observe(this, EventObserver(observer))
 }

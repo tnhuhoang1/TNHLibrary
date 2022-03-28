@@ -19,6 +19,9 @@ interface BaseDao<MODEL>{
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(vararg data: MODEL)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(list: List<MODEL>)
+
     /**
      * insert on object into table if it is not exists
      */
@@ -30,6 +33,9 @@ interface BaseDao<MODEL>{
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertAllIfNotExists(data: MODEL)
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertAllIfNotExists(list: List<MODEL>)
 
     /**
      * delete one object in database

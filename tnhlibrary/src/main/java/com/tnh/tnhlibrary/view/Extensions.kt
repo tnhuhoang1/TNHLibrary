@@ -3,7 +3,7 @@ package com.tnh.tnhlibrary.view
 import android.app.Activity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import com.tnh.tnhlibrary.trace
+import com.tnh.tnhlibrary.utils.trace
 
 fun View.gone(){
     this.visibility = View.GONE

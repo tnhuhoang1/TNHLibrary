@@ -1,4 +1,4 @@
-package com.tnh.tnhlibrary
+package com.tnh.tnhlibrary.utils
 
 import android.app.Activity
 import android.util.Log

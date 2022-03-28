@@ -3,7 +3,7 @@ package com.tnh.tnhlibrary.toast
 import android.content.Context
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.tnh.tnhlibrary.trace
+import com.tnh.tnhlibrary.utils.trace
 
 /**
  * show toast

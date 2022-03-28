@@ -3,7 +3,7 @@ package com.tnh.tnhlibrary.view.snackbar
 import android.app.Activity
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
-import com.tnh.tnhlibrary.trace
+import com.tnh.tnhlibrary.utils.trace
 
 fun Activity.showSnackbar(
     message: String, length: Int = Snackbar.LENGTH_SHORT
