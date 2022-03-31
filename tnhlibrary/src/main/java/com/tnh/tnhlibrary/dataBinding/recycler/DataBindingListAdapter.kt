@@ -5,7 +5,6 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 
 abstract class DataBindingListAdapter<MODEL, DATA_BINDING_CLASS: ViewDataBinding>(
     @LayoutRes val itemLayout: Int, itemCallback: DiffUtil.ItemCallback<MODEL>
