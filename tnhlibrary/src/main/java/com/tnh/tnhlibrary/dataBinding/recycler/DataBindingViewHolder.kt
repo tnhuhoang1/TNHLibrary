@@ -10,7 +10,7 @@ import com.tnh.tnhlibrary.utils.logE
 open class DataBindingViewHolder<DATA_BINDING_CLASS: ViewDataBinding>(
     val binding: DATA_BINDING_CLASS
 ): RecyclerView.ViewHolder(binding.root) {
-    fun bind(block: (binding: DATA_BINDING_CLASS) -> Unit){
+    open fun bind(block: (binding: DATA_BINDING_CLASS) -> Unit){
         block(binding)
     }
     companion object{
